@@ -5,7 +5,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 
@@ -27,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar appToolBar = findViewById(R.id.toolbar);
-        setSupportActionBar(appToolBar);
         ActionBar appActionBar = getSupportActionBar();
         appActionBar.setDisplayHomeAsUpEnabled(true);
 
