@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(MenuItem menuItem) {
             menuItem.setChecked(true);
             drawerLayout.closeDrawers();
-            //put actions on press here (fragments)
+            //put actions on press here
             return true;
         }
     };
