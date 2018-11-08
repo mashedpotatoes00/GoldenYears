@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Golden Years</string>
+    <string name="open_navigation_drawer">open</string>
+    <string name="close_navigation_drawer">close</string>
 </resources>
