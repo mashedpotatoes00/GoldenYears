@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,9 +16,28 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
     private NavigationView.OnNavigationItemSelectedListener navSelectListener = new NavigationView.OnNavigationItemSelectedListener() {
         public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+            Fragment fragment;
+            switch(menuItem.getItemId()) {
+                case R.id.nav_profile:
+                    fragment = new Profile();
+                    break;
+                case R.id.nav_settings:
+                    fragment = new Settings();
+                    break;
+                case R.id.nav_legal:
+                    fragment = new Legal_Privacy();
+                    break;
+
+                default:
+                    return false;
+            }
+
+            getSupportFragmentManager().beginTransaction().add(R.id.content_frame, fragment).commit();
+
             menuItem.setChecked(true);
             drawerLayout.closeDrawers();
-            //put actions on press here
+
             return true;
         }
     };
