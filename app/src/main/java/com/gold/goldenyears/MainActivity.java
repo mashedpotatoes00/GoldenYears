@@ -9,6 +9,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
             Fragment fragment;
             switch(menuItem.getItemId()) {
+                case R.id.nav_home:
+                    fragment = new Home();
+                    break;
                 case R.id.nav_profile:
                     fragment = new Profile();
                     break;
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     return false;
             }
 
-            getSupportFragmentManager().beginTransaction().add(R.id.content_frame, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
 
             menuItem.setChecked(true);
             drawerLayout.closeDrawers();
@@ -46,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Home()).commit();
 
         ActionBar appActionBar = getSupportActionBar();
         appActionBar.setDisplayHomeAsUpEnabled(true);
@@ -67,3 +75,5 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 }
+
+
