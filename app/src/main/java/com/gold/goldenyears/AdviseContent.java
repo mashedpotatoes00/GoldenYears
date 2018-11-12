@@ -1,6 +1,5 @@
 package com.gold.goldenyears;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +12,7 @@ public class AdviseContent extends Fragment {
     public AdviseContent() {
     }
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }

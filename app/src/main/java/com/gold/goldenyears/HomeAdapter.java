@@ -15,6 +15,7 @@ public class HomeAdapter extends FragmentStatePagerAdapter {
         super(manager);
     }
 
+    @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
@@ -31,6 +32,7 @@ public class HomeAdapter extends FragmentStatePagerAdapter {
 
     }
 
+    @Override
     public int getCount() {
         return NUM_PAGES;
     }
