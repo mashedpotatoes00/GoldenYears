@@ -11,21 +11,15 @@ import android.view.MenuItem;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
     private NavigationView.OnNavigationItemSelectedListener navSelectListener = new NavigationView.OnNavigationItemSelectedListener() {
         public boolean onNavigationItemSelected(MenuItem menuItem) {
 
@@ -81,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(navSelectListener);
-        radioGroup = findViewById(R.id.radioGroup);
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
@@ -107,15 +100,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("firstStart", false);
         editor.apply();
-    }
-
-    public void checkButton(View v) {
-        int radioId = radioGroup.getCheckedRadioButtonId();
-
-        radioButton = findViewById(radioId);
-
-//        Toast.makeText(this, "Selected Radio Button: " + radioButton.getText(),
-//                Toast.LENGTH_SHORT).show();
     }
 }
 
